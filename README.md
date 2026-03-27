@@ -34,12 +34,19 @@ Laikas matuotas sekundėmis (s)
 
 | Konteineris | Strategija | 1k įrašų | 10k įrašų | 100k įrašų | 1M įrašų | 10M įrašų |
 |---|---|---|---|---|---|---|
-| Vector | 1 | 0,0005 | 0,004 | 0,04 | 0,6 | 10,7 | 
+| Vector | 1 | 0,0006 | 0,005 | 0,04 | 0,6 | 10,7 | 
 | Vector | 2 | 0,0002 | 0,002 | 0,03 | 0,3 | 10,6 | 
-| Vector | 3 | 0,0002 | 0,002 | 0,03 | 0,4 | 6,4 | 
+| Vector | 3 | 0,0003 | 0,003 | 0,03 | 0,4 | 6,4 | 
 | List | 1 | 0,0005 | 0,004 | 0,04 | 0,4 | 15,7 | 
-| List | 2 | 0,0004 | 0,004 | 0,05 | 0,5 | 15,3 | 
-| List | 3 | 0,0002 | 0,002 | 0,04 | 0,4 | 10,4 | 
-| Deque | 1 | 0,0004 | 0,005 | 0,06 | 0,6 | 12,7 | 
-| Deque | 2 | 0,0006 | 0,005 | 0,08 | 0,5 | 17,0 | 
-| Deque | 3 | 0,0004 | 0,004 | 0,07 | 0,4 | 10,4 | 
+| List | 2 | 0,0004 | 0,004 | 0,06 | 0,6 | 15,4 | 
+| List | 3 | 0,0002 | 0,002 | 0,04 | 0,4 | 10,5 | 
+| Deque | 1 | 0,0004 | 0,005 | 0,06 | 0,6 | 12,8 | 
+| Deque | 2 | 0,0006 | 0,005 | 0,08 | 0,5 | 17,1 | 
+| Deque | 3 | 0,0004 | 0,004 | 0,07 | 0,5 | 10,4 | 
+
+<img width="271" height="266" alt="image" src="https://github.com/user-attachments/assets/e79d7ea3-2182-4a14-8887-094ada6c1057" />
+
+## Išvada
+
+Dirbant su dideliais failais geriausiai veikia 3 strategija. 1 ir 2 strategijų veikimo greitis su vector ir list konteineriais yra panašus kai dirbama su dideliais failais.
+Skirtumas tarp 2 ir 3 strategijų dirbant su mažais failais yra labai nedidelis, bet dažniausiai greičiausiai veikia su 3 strategija. Taigi apibendrinus geriausiai veikia 3 strategija, kuri perkelia dalį studentų į naują konteinerį ir ištrina iš seno, naudojant partition ir remove_copy.
